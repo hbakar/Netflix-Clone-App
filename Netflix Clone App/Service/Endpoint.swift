@@ -23,32 +23,28 @@ enum HTTPMethod: String {
     case patch = "PATCH"
 }
 
-
 enum Endpoint {
-    case getUsers
-    case comments(postID: String)
-    case posts(title: String, body: String, userID: Int)
+    case getUpcoming(page: String)
+    case discover(page: String)
 }
 
 extension Endpoint: EndpointProtocol {
     
     var baseURL: String {
-        "https://jsonplaceholder.typicode.com"
+        "https://api.themoviedb.org"
     }
     
     var path: String {
         switch self {
-        case .getUsers: return "/users"
-        case .comments: return "/comments"
-        case .posts: return "/posts"
+        case .getUpcoming: return "/3/movie/upcoming"
+        case .discover: return "/3/discover/movie"
         }
     }
     
     var method: HTTPMethod {
         switch self {
-        case .getUsers: return .get
-        case .comments: return .get
-        case .posts: return .post
+        case .getUpcoming: return .get
+        case .discover: return .get
         }
     }
     
@@ -58,20 +54,35 @@ extension Endpoint: EndpointProtocol {
     }
     
     var parameters: [String : Any]? {
-        if case .posts(let title,let body, let userId) = self {
-            return ["title": title,"body": body, "userId": userId]
-        }
-        
+        /*
+         if case .getUpcoming(let title,let body, let userId) = self {
+         // return ["title": title,"body": body, "userId": userId]
+         }
+         */
         return nil
     }
     
     func request() -> URLRequest {
+        
         guard var components = URLComponents(string: baseURL) else {
             fatalError("URL ERROR")
         }
         
-        if case .comments(let id) = self {
-            components.queryItems = [URLQueryItem(name: "postId", value: id)]
+        if case .getUpcoming(let page) = self {
+            components.queryItems = [URLQueryItem(name: Constant.apiKey, value: Constant.apiKeyDesc),
+                                     URLQueryItem(name: Constant.language, value: Constant.langCode),
+                                     URLQueryItem(name: Constant.page, value: page)]
+        }
+        
+        if case .discover(let page) = self {
+            components.queryItems = [URLQueryItem(name: Constant.apiKey, value: Constant.apiKey),
+                                     URLQueryItem(name: Constant.language, value: Constant.langCode),
+                                     URLQueryItem(name: Constant.sort_by, value: Constant.popularityDesc),
+                                     URLQueryItem(name: Constant.includeAdult, value: Constant.includeAdultFalse),
+                                     URLQueryItem(name: Constant.include_video, value: Constant.include_video_false),
+                                     URLQueryItem(name: Constant.page, value: page),
+                                     URLQueryItem(name: Constant.with_watch_monetization_types, value: Constant.with_watch_monetization_types_desc)
+            ]
         }
         
         components.path = path
@@ -96,6 +107,5 @@ extension Endpoint: EndpointProtocol {
         
         return request
     }
-    
     
 }

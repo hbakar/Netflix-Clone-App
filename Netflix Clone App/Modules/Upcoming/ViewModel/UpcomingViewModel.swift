@@ -9,7 +9,11 @@ import Foundation
 
 final class UpcomingViewModel: UpcomingViewModelProtocol {
     
+    var delegate: UpcomingViewModelDelegate?
+    
     var upcomingList: TitleResponse?
+    
+    var currentPage: Int = Int()
     
     private let service: UpComingDataProviderProtocol
     
@@ -17,13 +21,14 @@ final class UpcomingViewModel: UpcomingViewModelProtocol {
         self.service = service
     }
     
-    func fetchUpcoming(with url: Endpoint, completion: @escaping (Result<TitleResponse?, Error>) -> ()) {
+    func fetchUpcoming(with url: Endpoint) {
         service.fetchUpcoming(with: url) { [weak self] results in
             switch results {
             case .success(let success):
-                <#code#>
+                self?.upcomingList = success
+                self?.delegate?.notify(.didFetchUpcoming)
             case .failure(let failure):
-                <#code#>
+                self?.delegate?.notify(.fetchFailedUpcoming(failure))
             }
         }
     }

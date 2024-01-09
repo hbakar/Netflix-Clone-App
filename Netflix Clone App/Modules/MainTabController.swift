@@ -15,8 +15,15 @@ final class MainTabController: UITabBarController {
         view.backgroundColor = .systemBackground
         
         let homeViewController = HomeViewController(nibName: String(describing:HomeViewController.self), bundle: .main)
+        
+        let upcomingDataProvider = UpComingDataProvider()
         let upcomingViewController = UpcomingViewController(nibName: String(describing: UpcomingViewController.self), bundle: .main)
+        upcomingViewController.viewModel = UpcomingViewModel(service: upcomingDataProvider)
+        
+        let searchDataProvider = SearchDataProvider()
         let searchViewController = SearchViewController(nibName: String(describing: SearchViewController.self), bundle: .main)
+        searchViewController.viewModel = SearchViewModel(service: searchDataProvider)
+        
         let downloadsViewController = DownloadsViewController(nibName: String(describing: DownloadsViewController.self), bundle: .main)
         
         let navigationControllerHome = UINavigationController(rootViewController: homeViewController)

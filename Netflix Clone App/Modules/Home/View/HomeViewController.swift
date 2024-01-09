@@ -16,10 +16,13 @@ final class HomeViewController: UIViewController {
         
         setupTableViewCell()
         setupTableView()
+        
+        let heroHeaderView = UIView(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: 450))
+        heroHeaderView.backgroundColor = .systemGreen
+        homeTableView.tableHeaderView = heroHeaderView
     }
     
     private func setupTableViewCell() {
-        
         let nibName = String(describing: HomeTableViewCell.self)
         let nib = UINib(nibName: nibName, bundle: .main)
         homeTableView.register(nib, forCellReuseIdentifier: nibName)

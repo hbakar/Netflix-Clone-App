@@ -12,25 +12,13 @@ struct TitleResponse: Decodable {
 }
 
 struct TitleResultResponse: Decodable {
-    let Id: Int?
-    let mediaType: String?
-    let originalName: String?
-    let originalTitle: String?
-    let posterPath: String?
+    let id: Int?
+    let media_type: String?
+    let original_name: String?
+    let original_title: String?
+    let poster_path: String?
     let overview: String?
-    let voteCount: String?
-    let date: String?
-    let voteAverage: Double?
-    
-    enum CodingKeys: String, CodingKey {
-        case Id = "id"
-        case mediaType = "media_type"
-        case originalName = "original_name"
-        case originalTitle = "original_title"
-        case posterPath = "poster_path"
-        case overview
-        case voteCount = "vote_count"
-        case date = "release_date"
-        case voteAverage = "vote_average"
-    }
+    let vote_count: Int?
+    let release_date: String?
+    let vote_average: Double?
 }

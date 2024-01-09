@@ -13,5 +13,7 @@ protocol UpcomingViewModelProtocol {
     
     var upcomingList: TitleResponse? {get set}
     
-    func fetchUpcoming(with url: Endpoint, completion: @escaping(Result<TitleResponse?, Error>) ->())
+    var currentPage: Int {get set}
+    
+    func fetchUpcoming(with url: Endpoint) 
 }

@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import Kingfisher
+
 
 class TitleTableViewCell: UITableViewCell {
     
@@ -17,8 +19,20 @@ class TitleTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        
+        titlePosterUIImageView.layer.cornerRadius = 12
+        titlePosterUIImageView.layer.borderWidth = 1
+        titlePosterUIImageView.layer.borderColor = UIColor(white: 0.95, alpha: 1).cgColor
+        
     }
     
-    
+    func prepareForUpcomingItem(with model: TitleViewModel) {
+        
+        if let url = URL(string: "https://image.tmdb.org/t/p/w500\(model.posterURL)") {
+            titlePosterUIImageView.kf.setImage(with: url)
+        }
+        
+        titleLabel.text = model.titleName
+    }
     
 }
