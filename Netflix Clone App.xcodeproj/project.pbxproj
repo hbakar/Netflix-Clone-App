@@ -27,6 +27,17 @@
 		DCC8E2392B4CB07100CA57E2 /* SearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DCC8E2372B4CB07100CA57E2 /* SearchViewController.xib */; };
 		DCC8E23F2B4CB0F600CA57E2 /* DownloadsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC8E23D2B4CB0F600CA57E2 /* DownloadsViewController.swift */; };
 		DCC8E2402B4CB0F600CA57E2 /* DownloadsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DCC8E23E2B4CB0F600CA57E2 /* DownloadsViewController.xib */; };
+		DCC8E2442B4CBA3100CA57E2 /* UIApplication+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC8E2432B4CBA3100CA57E2 /* UIApplication+Extension.swift */; };
+		DCC8E2462B4CBA9800CA57E2 /* TitleResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC8E2452B4CBA9800CA57E2 /* TitleResponse.swift */; };
+		DCC8E24B2B4CBD0F00CA57E2 /* TitleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC8E2492B4CBD0F00CA57E2 /* TitleTableViewCell.swift */; };
+		DCC8E24C2B4CBD0F00CA57E2 /* TitleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DCC8E24A2B4CBD0F00CA57E2 /* TitleTableViewCell.xib */; };
+		DCC8E24F2B4CC1EE00CA57E2 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC8E24E2B4CC1EE00CA57E2 /* Endpoint.swift */; };
+		DCC8E2512B4CC28100CA57E2 /* ServiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC8E2502B4CC28100CA57E2 /* ServiceManager.swift */; };
+		DCC8E2532B4CC39600CA57E2 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC8E2522B4CC39600CA57E2 /* String+Extension.swift */; };
+		DCC8E2562B4CC47E00CA57E2 /* UpComingDataProviderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC8E2552B4CC47E00CA57E2 /* UpComingDataProviderProtocol.swift */; };
+		DCC8E2582B4CC4DC00CA57E2 /* UpComingDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC8E2572B4CC4DC00CA57E2 /* UpComingDataProvider.swift */; };
+		DCC8E25C2B4CC52600CA57E2 /* UpcomingViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC8E25B2B4CC52600CA57E2 /* UpcomingViewModelProtocol.swift */; };
+		DCC8E25E2B4CC5CC00CA57E2 /* UpcomingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC8E25D2B4CC5CC00CA57E2 /* UpcomingViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +82,17 @@
 		DCC8E2372B4CB07100CA57E2 /* SearchViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchViewController.xib; sourceTree = "<group>"; };
 		DCC8E23D2B4CB0F600CA57E2 /* DownloadsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadsViewController.swift; sourceTree = "<group>"; };
 		DCC8E23E2B4CB0F600CA57E2 /* DownloadsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DownloadsViewController.xib; sourceTree = "<group>"; };
+		DCC8E2432B4CBA3100CA57E2 /* UIApplication+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Extension.swift"; sourceTree = "<group>"; };
+		DCC8E2452B4CBA9800CA57E2 /* TitleResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleResponse.swift; sourceTree = "<group>"; };
+		DCC8E2492B4CBD0F00CA57E2 /* TitleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleTableViewCell.swift; sourceTree = "<group>"; };
+		DCC8E24A2B4CBD0F00CA57E2 /* TitleTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TitleTableViewCell.xib; sourceTree = "<group>"; };
+		DCC8E24E2B4CC1EE00CA57E2 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
+		DCC8E2502B4CC28100CA57E2 /* ServiceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceManager.swift; sourceTree = "<group>"; };
+		DCC8E2522B4CC39600CA57E2 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
+		DCC8E2552B4CC47E00CA57E2 /* UpComingDataProviderProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpComingDataProviderProtocol.swift; sourceTree = "<group>"; };
+		DCC8E2572B4CC4DC00CA57E2 /* UpComingDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpComingDataProvider.swift; sourceTree = "<group>"; };
+		DCC8E25B2B4CC52600CA57E2 /* UpcomingViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingViewModelProtocol.swift; sourceTree = "<group>"; };
+		DCC8E25D2B4CC5CC00CA57E2 /* UpcomingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,11 +143,12 @@
 		DCC8E1E82B4CACA400CA57E2 /* Netflix Clone App */ = {
 			isa = PBXGroup;
 			children = (
-				DCC8E2282B4CAE0800CA57E2 /* Extensions */,
 				DCC8E21C2B4CACCE00CA57E2 /* Delegates */,
-				DCC8E21D2B4CACD300CA57E2 /* Resources */,
+				DCC8E24D2B4CC1E100CA57E2 /* Service */,
+				DCC8E2282B4CAE0800CA57E2 /* Extensions */,
 				DCC8E2222B4CADCB00CA57E2 /* Modules */,
-				DCC8E2202B4CAD9A00CA57E2 /* MainTabController.swift */,
+				DCC8E2422B4CB98600CA57E2 /* Models */,
+				DCC8E21D2B4CACD300CA57E2 /* Resources */,
 				DCC8E21E2B4CACD800CA57E2 /* Storyboards */,
 				DCC8E21F2B4CACDE00CA57E2 /* Supports */,
 				DCC8E1F22B4CACA400CA57E2 /* Netflix_Clone_App.xcdatamodeld */,
@@ -186,6 +209,7 @@
 		DCC8E2222B4CADCB00CA57E2 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				DCC8E2202B4CAD9A00CA57E2 /* MainTabController.swift */,
 				DCC8E2272B4CADF600CA57E2 /* Home */,
 				DCC8E2352B4CB02900CA57E2 /* Upcoming */,
 				DCC8E23A2B4CB07400CA57E2 /* Search */,
@@ -206,6 +230,8 @@
 			isa = PBXGroup;
 			children = (
 				DCC8E2292B4CAE1100CA57E2 /* TypeAlias.swift */,
+				DCC8E2432B4CBA3100CA57E2 /* UIApplication+Extension.swift */,
+				DCC8E2522B4CC39600CA57E2 /* String+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -232,8 +258,9 @@
 		DCC8E2352B4CB02900CA57E2 /* Upcoming */ = {
 			isa = PBXGroup;
 			children = (
-				DCC8E2312B4CB02500CA57E2 /* UpcomingViewController.swift */,
-				DCC8E2322B4CB02500CA57E2 /* UpcomingViewController.xib */,
+				DCC8E25A2B4CC51700CA57E2 /* ViewModel */,
+				DCC8E2542B4CC46A00CA57E2 /* DataProvider */,
+				DCC8E2482B4CBCFD00CA57E2 /* View */,
 			);
 			path = Upcoming;
 			sourceTree = "<group>";
@@ -262,6 +289,68 @@
 				DCC8E23E2B4CB0F600CA57E2 /* DownloadsViewController.xib */,
 			);
 			path = Downloads;
+			sourceTree = "<group>";
+		};
+		DCC8E2422B4CB98600CA57E2 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				DCC8E2452B4CBA9800CA57E2 /* TitleResponse.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		DCC8E2472B4CBCF800CA57E2 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				DCC8E2492B4CBD0F00CA57E2 /* TitleTableViewCell.swift */,
+				DCC8E24A2B4CBD0F00CA57E2 /* TitleTableViewCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		DCC8E2482B4CBCFD00CA57E2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				DCC8E2472B4CBCF800CA57E2 /* Cell */,
+				DCC8E2592B4CC50400CA57E2 /* UpcomingList */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		DCC8E24D2B4CC1E100CA57E2 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				DCC8E24E2B4CC1EE00CA57E2 /* Endpoint.swift */,
+				DCC8E2502B4CC28100CA57E2 /* ServiceManager.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		DCC8E2542B4CC46A00CA57E2 /* DataProvider */ = {
+			isa = PBXGroup;
+			children = (
+				DCC8E2552B4CC47E00CA57E2 /* UpComingDataProviderProtocol.swift */,
+				DCC8E2572B4CC4DC00CA57E2 /* UpComingDataProvider.swift */,
+			);
+			path = DataProvider;
+			sourceTree = "<group>";
+		};
+		DCC8E2592B4CC50400CA57E2 /* UpcomingList */ = {
+			isa = PBXGroup;
+			children = (
+				DCC8E2312B4CB02500CA57E2 /* UpcomingViewController.swift */,
+				DCC8E2322B4CB02500CA57E2 /* UpcomingViewController.xib */,
+			);
+			path = UpcomingList;
+			sourceTree = "<group>";
+		};
+		DCC8E25A2B4CC51700CA57E2 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				DCC8E25B2B4CC52600CA57E2 /* UpcomingViewModelProtocol.swift */,
+				DCC8E25D2B4CC5CC00CA57E2 /* UpcomingViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -372,6 +461,7 @@
 				DCC8E2402B4CB0F600CA57E2 /* DownloadsViewController.xib in Resources */,
 				DCC8E1F62B4CACA600CA57E2 /* Assets.xcassets in Resources */,
 				DCC8E2392B4CB07100CA57E2 /* SearchViewController.xib in Resources */,
+				DCC8E24C2B4CBD0F00CA57E2 /* TitleTableViewCell.xib in Resources */,
 				DCC8E2342B4CB02500CA57E2 /* UpcomingViewController.xib in Resources */,
 				DCC8E22F2B4CAE7100CA57E2 /* HomeTableViewCell.xib in Resources */,
 				DCC8E2262B4CADE800CA57E2 /* HomeViewController.xib in Resources */,
@@ -399,16 +489,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DCC8E2562B4CC47E00CA57E2 /* UpComingDataProviderProtocol.swift in Sources */,
+				DCC8E2532B4CC39600CA57E2 /* String+Extension.swift in Sources */,
+				DCC8E25C2B4CC52600CA57E2 /* UpcomingViewModelProtocol.swift in Sources */,
+				DCC8E24F2B4CC1EE00CA57E2 /* Endpoint.swift in Sources */,
 				DCC8E23F2B4CB0F600CA57E2 /* DownloadsViewController.swift in Sources */,
 				DCC8E2332B4CB02500CA57E2 /* UpcomingViewController.swift in Sources */,
+				DCC8E24B2B4CBD0F00CA57E2 /* TitleTableViewCell.swift in Sources */,
 				DCC8E22A2B4CAE1100CA57E2 /* TypeAlias.swift in Sources */,
 				DCC8E2252B4CADE800CA57E2 /* HomeViewController.swift in Sources */,
 				DCC8E2382B4CB07100CA57E2 /* SearchViewController.swift in Sources */,
 				DCC8E22E2B4CAE7100CA57E2 /* HomeTableViewCell.swift in Sources */,
 				DCC8E1F42B4CACA400CA57E2 /* Netflix_Clone_App.xcdatamodeld in Sources */,
+				DCC8E25E2B4CC5CC00CA57E2 /* UpcomingViewModel.swift in Sources */,
+				DCC8E2462B4CBA9800CA57E2 /* TitleResponse.swift in Sources */,
 				DCC8E1EA2B4CACA400CA57E2 /* AppDelegate.swift in Sources */,
+				DCC8E2442B4CBA3100CA57E2 /* UIApplication+Extension.swift in Sources */,
+				DCC8E2582B4CC4DC00CA57E2 /* UpComingDataProvider.swift in Sources */,
 				DCC8E2212B4CAD9A00CA57E2 /* MainTabController.swift in Sources */,
 				DCC8E1EC2B4CACA400CA57E2 /* SceneDelegate.swift in Sources */,
+				DCC8E2512B4CC28100CA57E2 /* ServiceManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
