@@ -9,16 +9,23 @@ import UIKit
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
-    var window: UIWindow?
+    var window: UIWindow? {
+        didSet {
+            window?.overrideUserInterfaceStyle = .dark
+        }
+    }
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
       
         guard let windowScene = (scene as? UIWindowScene) else { return }
         window = UIWindow(windowScene: windowScene)
         
-        window?.overrideUserInterfaceStyle = .dark
+        let splashViewController = SplashViewController(nibName: String(describing: SplashViewController.self), bundle: .main)
         
-        let navigationController = UINavigationController(rootViewController: MainTabController())
+      //  let detailViewController = DetailViewController(nibName: String(describing: DetailViewController.self), bundle: .main)
+        
+        let navigationController = UINavigationController(rootViewController: splashViewController)
+        
         window?.rootViewController = navigationController
         window?.makeKeyAndVisible()
     }

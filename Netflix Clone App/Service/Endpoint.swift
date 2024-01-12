@@ -24,7 +24,11 @@ enum HTTPMethod: String {
 }
 
 enum Endpoint {
-    case getUpcoming(page: String)
+    case trendingMovie
+    case trendingTVs
+    case popular
+    case upcoming(page: String)
+    case topRated
     case discover(page: String)
 }
 
@@ -36,14 +40,22 @@ extension Endpoint: EndpointProtocol {
     
     var path: String {
         switch self {
-        case .getUpcoming: return "/3/movie/upcoming"
+        case .trendingMovie: return "/3/trending/movie/day"
+        case .trendingTVs: return "/3/trending/tv/day"
+        case .popular: return "/3/movie/popular"
+        case .topRated: return "/3/movie/top_rated"
+        case .upcoming: return "/3/movie/upcoming"
         case .discover: return "/3/discover/movie"
         }
     }
     
     var method: HTTPMethod {
         switch self {
-        case .getUpcoming: return .get
+        case .trendingMovie: return .get
+        case .trendingTVs: return .get
+        case .popular: return .get
+        case .upcoming: return .get
+        case .topRated: return .get
         case .discover: return .get
         }
     }
@@ -68,14 +80,26 @@ extension Endpoint: EndpointProtocol {
             fatalError("URL ERROR")
         }
         
-        if case .getUpcoming(let page) = self {
+        if case .trendingMovie = self {
+            components.queryItems = [URLQueryItem(name: Constant.apiKey, value: Constant.apiKeyDesc)]
+        }
+        
+        if case .trendingTVs = self {
+            components.queryItems = [URLQueryItem(name: Constant.apiKey, value: Constant.apiKeyDesc)]
+        }
+        
+        if case .popular = self {
+            components.queryItems = [URLQueryItem(name: Constant.apiKey, value: Constant.apiKeyDesc)]
+        }
+        
+        if case .upcoming(let page) = self {
             components.queryItems = [URLQueryItem(name: Constant.apiKey, value: Constant.apiKeyDesc),
                                      URLQueryItem(name: Constant.language, value: Constant.langCode),
                                      URLQueryItem(name: Constant.page, value: page)]
         }
         
         if case .discover(let page) = self {
-            components.queryItems = [URLQueryItem(name: Constant.apiKey, value: Constant.apiKey),
+            components.queryItems = [URLQueryItem(name: Constant.apiKey, value: Constant.apiKeyDesc),
                                      URLQueryItem(name: Constant.language, value: Constant.langCode),
                                      URLQueryItem(name: Constant.sort_by, value: Constant.popularityDesc),
                                      URLQueryItem(name: Constant.includeAdult, value: Constant.includeAdultFalse),

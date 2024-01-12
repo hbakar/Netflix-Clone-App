@@ -1,5 +1,5 @@
 # Uncomment the next line to define a global platform for your project
-# platform :ios, '9.0'
+ platform :ios, '15.0'
 
 target 'Netflix Clone App' do
   # Comment the next line if you don't want to use dynamic frameworks
@@ -7,7 +7,9 @@ target 'Netflix Clone App' do
 
   # Pods for Netflix Clone App
   pod 'Kingfisher'
+  pod 'IQKeyboardManager'
   pod 'SnapKit', '~> 5.0.0'
+  pod 'SVProgressHUD'
 
   target 'Netflix Clone AppTests' do
     inherit! :search_paths

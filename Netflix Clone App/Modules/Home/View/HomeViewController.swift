@@ -11,15 +11,25 @@ final class HomeViewController: UIViewController {
     
     @IBOutlet weak var homeTableView: UITableView!
     
+    var viewModel: HomeViewModelProtocol?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupTableViewCell()
         setupTableView()
+        configureNavigationBar()
+        
+        viewModel?.delegate = self
+        
+        let endpoint1 = Endpoint.trendingMovie
+        viewModel?.fetchTrendingMovie(with: endpoint1)
         
         let heroHeaderView = UIView(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: 450))
         heroHeaderView.backgroundColor = .systemGreen
         homeTableView.tableHeaderView = heroHeaderView
+        
+        
     }
     
     private func setupTableViewCell() {
@@ -33,6 +43,16 @@ final class HomeViewController: UIViewController {
         homeTableView.dataSource = self
     }
     
+    func configureNavigationBar()
+    {
+        //navigationController?.navigationBar.isHidden = true
+  //      navigationController?.navigationBar.barTintColor = .white
+    //    navigationController?.navigationBar.isTranslucent = true
+        
+       // navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(handleCancel))
+        
+      //  navigationItem.rightBarButtonItem = UIBarButtonItem(customView: actionButton)
+    }
 }
 
 extension HomeViewController: tableV {
@@ -48,5 +68,42 @@ extension HomeViewController: tableV {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell()
         return cell
+    }
+}
+
+extension HomeViewController: HomeViewModelDelegate {
+    func notify(_ event: HomeViewModelEvents) {
+        switch event {
+        case .didFetchTrendingMovieList:
+            DispatchQueue.main.async {
+                self.homeTableView.reloadData()
+            }
+        case .fetchFailedTrendingMovieList(let error):
+            print(error.localizedDescription)
+        case .didFetchTrendingTVList:
+            DispatchQueue.main.async {
+                self.homeTableView.reloadData()
+            }
+        case .fetchFailedTrendingTVs(let error):
+            print(error.localizedDescription)
+        case .didFetchPopularList:
+            DispatchQueue.main.async {
+                self.homeTableView.reloadData()
+            }
+        case .fetchFailedPopularList(let error):
+            print(error.localizedDescription)
+        case .didFetchUpcomingList:
+            DispatchQueue.main.async {
+                self.homeTableView.reloadData()
+            }
+        case .fetchFailedUpcomingList(let error):
+            print(error.localizedDescription)
+        case .didFetchTopRatedList:
+            DispatchQueue.main.async {
+                self.homeTableView.reloadData()
+            }
+        case .fetchFailedTopRatedList(let error):
+            print(error.localizedDescription)
+        }
     }
 }

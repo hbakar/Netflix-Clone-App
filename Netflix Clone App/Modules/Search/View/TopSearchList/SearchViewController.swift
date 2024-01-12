@@ -53,13 +53,10 @@ extension SearchViewController: tableV {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: SearchTableItemCell.self), for: indexPath) as? SearchTableItemCell else { return UITableViewCell() }
-        
-        guard let list = viewModel?.discoverList?.results else { return UITableViewCell() }
-        
-        let model = list[indexPath.row]
+        guard let model = viewModel?.discoverList?.results?[indexPath.row],let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: SearchTableItemCell.self), for: indexPath) as? SearchTableItemCell else { return UITableViewCell() }
         
         cell.prepareForDiscoverItem(with: TitleViewModel(titleName: model.original_title ?? model.original_name ?? "Unknown*", posterURL: model.poster_path ?? ""))
+        
         return cell
     }
     

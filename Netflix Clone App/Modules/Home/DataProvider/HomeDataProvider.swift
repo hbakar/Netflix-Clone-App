@@ -8,6 +8,7 @@
 import Foundation
 
 final class HomeDataProvider: HomeDataProviderProtocol {
+    
     func fetchTrendingMovies(with url: Endpoint, completion: @escaping (Result<TitleResponse?, Error>) -> ()) {
         ServiceManager.shared.fetchRequest(url, completion: completion)
     } 
@@ -27,4 +28,5 @@ final class HomeDataProvider: HomeDataProviderProtocol {
     func fetchTopRated(with url: Endpoint, completion: @escaping (Result<TitleResponse?, Error>) -> ()) {
         ServiceManager.shared.fetchRequest(url, completion: completion)
     }
+    
 }

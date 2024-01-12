@@ -12,6 +12,10 @@ final class MainTabController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+       // self.tabBar.selectionIndicatorImage = UIImage(named: "Selected")
+        self.additionalSafeAreaInsets.bottom = 20
+       // self.tabBar.tintColor = UIColor(named: "gray06")
+        
         view.backgroundColor = .systemBackground
         
         let homeViewController = HomeViewController(nibName: String(describing:HomeViewController.self), bundle: .main)
@@ -42,7 +46,7 @@ final class MainTabController: UITabBarController {
         navigationControllerDownloads.title = "Downloads"
         
         tabBar.tintColor = .label
-        
+        tabBar.barTintColor = .black
         setViewControllers([navigationControllerHome,navigationControllerUpcoming,navigationControllerSearch,navigationControllerDownloads], animated: true)
     }
     

@@ -1,20 +1,30 @@
 PODS:
+  - IQKeyboardManager (6.5.16)
   - Kingfisher (7.10.1)
   - SnapKit (5.0.1)
+  - SVProgressHUD (2.3.1):
+    - SVProgressHUD/Core (= 2.3.1)
+  - SVProgressHUD/Core (2.3.1)
 
 DEPENDENCIES:
+  - IQKeyboardManager
   - Kingfisher
   - SnapKit (~> 5.0.0)
+  - SVProgressHUD
 
 SPEC REPOS:
   trunk:
+    - IQKeyboardManager
     - Kingfisher
     - SnapKit
+    - SVProgressHUD
 
 SPEC CHECKSUMS:
+  IQKeyboardManager: 024b54d7dcb765c5bc99882cb4d5ea24a8cb7c3c
   Kingfisher: bc5abe80a8e0144537ef1dd5a0b2621b04f7f439
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
+  SVProgressHUD: 4837c74bdfe2e51e8821c397825996a8d7de6e22
 
-PODFILE CHECKSUM: 4b3509f3d8925040a8cefbfbdcd30beb51f36a51
+PODFILE CHECKSUM: 41c35d88d7b2afd38df2aac44a24bb974999659a
 
 COCOAPODS: 1.14.3

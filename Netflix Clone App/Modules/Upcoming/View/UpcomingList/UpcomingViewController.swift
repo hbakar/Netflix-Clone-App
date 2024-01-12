@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SVProgressHUD
 
 final class UpcomingViewController: UIViewController {
     
@@ -16,6 +17,7 @@ final class UpcomingViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        SVProgressHUD.show()
         configureUI()
         setupTableViewCell()
         setupTableView()
@@ -23,8 +25,9 @@ final class UpcomingViewController: UIViewController {
         viewModel?.currentPage = 1
         let currentPage: String = String(viewModel?.currentPage ?? 1)
         viewModel?.delegate = self
-        let endpoint = Endpoint.getUpcoming(page: currentPage)
+        let endpoint = Endpoint.upcoming(page: currentPage)
         viewModel?.fetchUpcoming(with: endpoint)
+        SVProgressHUD.dismiss()
     }
     
     private func setupTableView() {
@@ -55,15 +58,20 @@ extension UpcomingViewController: tableV {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: TitleTableViewCell.self), for: indexPath) as? TitleTableViewCell else { return UITableViewCell() }
-        
-        guard let list = viewModel?.upcomingList?.results else { return UITableViewCell() }
-        
-        let model = list[indexPath.row]
+        guard let model = viewModel?.upcomingList?.results?[indexPath.row],let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: TitleTableViewCell.self), for: indexPath) as? TitleTableViewCell else { return UITableViewCell() }
         
         cell.prepareForUpcomingItem(with: TitleViewModel(titleName: model.original_title ?? model.original_name ?? "Unknown*", posterURL: model.poster_path ?? ""))
-        
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        
+        let detailViewController = DetailViewController(nibName: String(describing: DetailViewController.self), bundle: .main)
+        
+        self.modalPresentationStyle = .pageSheet
+        self.modalTransitionStyle = .crossDissolve
+        self.present(detailViewController,animated: true)
     }
 }
 
