@@ -10,6 +10,7 @@ target 'Netflix Clone App' do
   pod 'IQKeyboardManager'
   pod 'SnapKit', '~> 5.0.0'
   pod 'SVProgressHUD'
+  pod 'Hero'
 
   target 'Netflix Clone AppTests' do
     inherit! :search_paths
